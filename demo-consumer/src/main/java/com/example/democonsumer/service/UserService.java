@@ -37,7 +37,7 @@ public class UserService {
     private UserRepository userRepository;
 
     public List<UserEntity> testReturn() {
-        // 没有记录，返回了一个空集合，不是null，打印为0
+        // 没有记录，返回了一个空集合，不是null，打印为0。
         // System.out.println(list.size());
         return userRepository.list(new LambdaQueryWrapper<UserEntity>()
                 .eq(UserEntity::getAge, 1000));
