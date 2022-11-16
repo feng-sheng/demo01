@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -36,8 +37,16 @@ public class UserService {
     private UserRepository userRepository;
 
     public List<UserEntity> testReturn() {
+        // 没有记录，返回了一个空集合，不是null，打印为0
+        // System.out.println(list.size());
         return userRepository.list(new LambdaQueryWrapper<UserEntity>()
                 .eq(UserEntity::getAge, 1000));
+    }
+
+    public List<UserEntity> testReturn2() {
+        // 报错：sql语句异常。。。
+        return userRepository.list(new LambdaQueryWrapper<UserEntity>()
+                .in(UserEntity::getAge, new ArrayList<Integer>()));
     }
 
     @Transactional
