@@ -14,10 +14,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 /**
  * @Author: lifengsheng
@@ -47,6 +44,17 @@ public class UserService {
         // 报错：sql语句异常。。。
         return userRepository.list(new LambdaQueryWrapper<UserEntity>()
                 .in(UserEntity::getAge, new ArrayList<Integer>()));
+    }
+
+    public List<UserEntity> testReturn3() {
+        // 报错：sql语句异常。。。
+        return userRepository.getBaseMapper().selectBatchIds(Arrays.asList(1, 2, 3));
+    }
+
+
+    public List<UserEntity> testReturn4() {
+        return userRepository.list(new LambdaQueryWrapper<UserEntity>()
+                .ne(UserEntity::getUsername, "hello kit"));
     }
 
     @Transactional

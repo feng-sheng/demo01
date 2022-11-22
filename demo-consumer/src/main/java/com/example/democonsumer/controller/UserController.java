@@ -32,6 +32,18 @@ public class UserController {
         return userService.testReturn2();
     }
 
+    @GetMapping("/testReturn3")
+    public List<UserEntity> testReturn3() {
+        System.out.println(userService.testReturn3().size());
+        return userService.testReturn3();
+    }
+
+    @GetMapping("/testReturn4")
+    public List<UserEntity> testReturn4() {
+        System.out.println(userService.testReturn4().size());
+        return userService.testReturn4();
+    }
+
     @GetMapping("/updateOne")
     public boolean updateOne() {
         return userService.updateOne();
