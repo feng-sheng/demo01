@@ -21,7 +21,7 @@ public class UserEntity implements Serializable {
     private Long id;
     private String username;
     private String password;
-    private int age;
+    private Integer age;
 
     @Override
     public String toString() {

@@ -8,6 +8,7 @@ import com.example.democonsumer.cache.CacheTest;
 import com.example.democonsumer.entity.User;
 import com.example.democonsumer.entity.UserEntity;
 import com.example.democonsumer.feign.UserApi;
+import com.example.democonsumer.mapper.UserMapper;
 import com.example.democonsumer.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -26,6 +27,9 @@ import java.util.*;
 public class UserService {
     @Resource
     private UserApi userApi;
+
+    @Resource
+    private UserMapper userMapper;
 
     @Resource
     private CacheTest cacheTest;
@@ -47,8 +51,7 @@ public class UserService {
     }
 
     public List<UserEntity> testReturn3() {
-        // 报错：sql语句异常。。。
-        return userRepository.getBaseMapper().selectBatchIds(Arrays.asList(1, 2, 3));
+        return userRepository.getBaseMapper().selectBatchIds(Arrays.asList(1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3));
     }
 
 
@@ -110,29 +113,37 @@ public class UserService {
 
     @Transactional
     public boolean updateBatch2() {
-        UserEntity user = new UserEntity();
         return userRepository.update(new LambdaUpdateWrapper<UserEntity>()
                 .eq(UserEntity::getPassword, "qwe")
-                .in(UserEntity::getId, Arrays.asList(5, 6, 7))
-                .set(UserEntity::getUsername, "hello!"));
+                .in(UserEntity::getId, Arrays.asList(5, 6, 7, 100))
+                .set(UserEntity::getUsername, "qop"));
     }
 
+    // 框架插入
     @Transactional
     public void saveBatch() {
         UserEntity user = new UserEntity();
-        UserEntity user2 = new UserEntity();
-        UserEntity user3 = new UserEntity();
-        user.setId(8L);
+
+        // 表字段age类型：int not null, 实体类类型：integer,
+        // 如果表age字段未设置默认值会报错：Field 'age' doesn't have a default value，设置默认值后就不会报错
         user.setUsername("lfs");
-        user.setAge(10);
-        user2.setId(9L);
-        user2.setUsername("lfs2");
-        user2.setAge(12);
-        user3.setId(10L);
-        user3.setUsername("lfs3");
-        user3.setAge(13);
-        userRepository.saveBatch(Arrays.asList(user, user2, user3));
+        userRepository.saveBatch(List.of(user));
     }
+
+    // 手写sql方式插入
+    public void addUser() {
+        UserEntity user = new UserEntity();
+
+        // 表字段age类型：int not null, 实体类类型：integer,
+        // 如果sql中指定了该列，不管表字段age有没有指定默认值都会报错
+        user.setUsername("lfs2");
+
+        userMapper.addUser(user);
+    }
+    // 总结:列显式指定的默认值不代表该列显式赋值为NULL时的值，而是代表如果该列被忽略时的值(INSERT时未指定该列)
+    // 如果列被定义为NOT NULL，不管有没有显式的指定默认值，当执行INSERT语句且指定该列时，报错：Column 'age' cannot be null
+    // 如果列被定义为NOT NULL，并且没有显式的指定默认值，当执行INSERT语句且未指定该列时，在严格模式与非严格模式下处理方式不同。
+    // 前者是报错：Field 'age' doesn't have a default value，后者是赋值为隐式的默认值，即列数据类型的默认值
 
     public UserEntity logUserById(Long userId) {
         return userApi.getUserById(userId);

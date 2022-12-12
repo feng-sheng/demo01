@@ -80,6 +80,12 @@ public class UserController {
         return true;
     }
 
+    @GetMapping("/addUser")
+    public boolean addUser() {
+        userService.addUser();
+        return true;
+    }
+
     @GetMapping("/logUserById")
     public UserEntity logUserById(Long userId) {
         return userService.logUserById(userId);
