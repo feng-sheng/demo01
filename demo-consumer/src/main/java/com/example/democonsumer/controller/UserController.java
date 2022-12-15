@@ -19,6 +19,11 @@ public class UserController {
     @Resource
     private UserService userService;
 
+    @GetMapping("/selectTest")
+    public List<Long> selectTest() {
+        return userService.selectTest();
+    }
+
     @GetMapping("/testReturn")
     public List<UserEntity> testReturn() {
         // 没有记录，返回了一个空集合，不是null，打印为0

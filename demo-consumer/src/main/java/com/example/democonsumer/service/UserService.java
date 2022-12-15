@@ -16,6 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * @Author: lifengsheng
@@ -36,6 +37,17 @@ public class UserService {
 
     @Resource
     private UserRepository userRepository;
+
+    public List<Long> selectTest() {
+        List<UserEntity> list = userRepository.list(new LambdaQueryWrapper<UserEntity>()
+                .eq(UserEntity::getAge, 100));
+
+        System.out.println(list.size());
+
+        List<Long> collect = list.stream().map(UserEntity::getId).collect(Collectors.toList());
+        System.out.println(collect);
+        return collect;
+    }
 
     public List<UserEntity> testReturn() {
         // 没有记录，返回了一个空集合，不是null，打印为0
