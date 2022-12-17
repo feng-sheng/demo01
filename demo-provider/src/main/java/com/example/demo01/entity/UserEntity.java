@@ -18,9 +18,9 @@ public class UserEntity {
     private Long id;
     private String username;
     private String password;
-    private int age;
+    private Integer age;
 
-    public UserEntity(Long id, String username, String password, int age) {
+    public UserEntity(Long id, String username, String password, Integer age) {
         this.id = id;
         this.username = username;
         this.password = password;
