@@ -8,3 +8,9 @@
 /dataSources.local.xml
 *.class
 *.idea
+/compiler.xml
+/encodings.xml
+/jarRepositories.xml
+/misc.xml
+/inspectionProfiles/Project_Default.xml
+/vcs.xml
