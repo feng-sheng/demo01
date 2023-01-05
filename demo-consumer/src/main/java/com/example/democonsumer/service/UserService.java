@@ -38,6 +38,10 @@ public class UserService {
     @Resource
     private UserRepository userRepository;
 
+    public List<UserEntity> list() {
+        return userRepository.list();
+    }
+
     public List<Long> selectTest() {
         List<UserEntity> list = userRepository.list(new LambdaQueryWrapper<UserEntity>()
                 .eq(UserEntity::getAge, 100));

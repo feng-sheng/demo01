@@ -27,7 +27,8 @@ public class MainTest {
 
     @Test
     public void test02() {
-        System.out.printf("abcefg%sccc%n", 123);
+        String str = null;
+        System.out.println(Arrays.asList("abc", "bcd", "xyz").contains("abc"));
     }
 
     @Test

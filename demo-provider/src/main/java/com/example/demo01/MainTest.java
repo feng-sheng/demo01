@@ -19,9 +19,10 @@ public class MainTest {
 
     @Test
     public void test3() {
-        Integer num = null;
-        System.out.println(String.valueOf(num));
-        System.out.println(num.toString());
+
+        Object obj = new Object();
+
+        System.out.println(obj);
     }
 
     @Test

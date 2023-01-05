@@ -19,6 +19,11 @@ public class UserController {
     @Resource
     private UserService userService;
 
+    @GetMapping("/list")
+    public List<UserEntity> list() {
+        return userService.list();
+    }
+
     @GetMapping("/selectTest")
     public List<Long> selectTest() {
         return userService.selectTest();
