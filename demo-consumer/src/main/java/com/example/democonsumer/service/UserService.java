@@ -143,7 +143,7 @@ public class UserService {
         // 表字段age类型：int not null, 实体类类型：integer,
         // 如果表age字段未设置默认值会报错：Field 'age' doesn't have a default value，设置默认值后就不会报错
         user.setUsername("lfs");
-        userRepository.saveBatch(List.of(user));
+//        userRepository.saveBatch(List.of(user));
     }
 
     // 手写sql方式插入
