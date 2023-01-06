@@ -61,4 +61,18 @@ public class MainTest {
         String format = String.format(HOUSE_NAME, "东户", bigDecimal);
         System.out.println(format);
     }
+
+    @Test
+    public void test4() {
+        UserEntity user = new UserEntity();
+        user.setUsername("lifengsheng");
+        user.setAge(29);
+        user.setPassword("1123456");
+        UserEntity user1 = new UserEntity();
+        user1.setUsername("yangguoqiang");
+        user1.setAge(26);
+        user1.setId(10L);
+        BeanUtils.copyProperties(user,user1,"age","password");
+        System.out.println(user1);
+    }
 }
