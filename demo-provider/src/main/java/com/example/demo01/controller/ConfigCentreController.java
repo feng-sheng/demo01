@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * @Author: lifengsheng
  * @Date: 2022/9/29 09:48
- * @Desc: 这是一个测试注册中心的
+ * @Desc: 这是一个测试配置中心的
  */
 @RestController
 @RefreshScope
