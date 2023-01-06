@@ -15,16 +15,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RefreshScope
 public class ConfigCentreController {
     @Value("${config0}")
-    private String config;
+    private String config0;
 
     @Value("${config2}")
     private String config2;
 
     @Value("${commonConfig}")
-    private String config3;
+    private String commonConfig;
 
     @GetMapping("/config")
     public String getConfig() {
-        return config + ": " + config2 + ": " + config3;
+        return config0 + ": " + config2 + ": " + commonConfig;
     }
 }
