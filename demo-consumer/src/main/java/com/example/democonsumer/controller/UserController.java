@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Author: lifengsheng
@@ -101,11 +102,11 @@ public class UserController {
     }
 
     @PostMapping("/user/addUser")
-    public String addUser(@RequestBody UserEntity user) {
+    public Map<String, Boolean> addUser(@RequestBody UserEntity user) {
         userService.insertUser(user);
         HashMap<String, Boolean> resultMap = new HashMap<>();
         resultMap.put("result", true);
-        return JSONObject.toJSONString(resultMap);
+        return resultMap;
     }
 
     @GetMapping("/logUserById")
