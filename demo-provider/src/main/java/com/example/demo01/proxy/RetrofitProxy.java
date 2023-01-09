@@ -1,14 +1,10 @@
-package com.example.demo01;
+package com.example.demo01.proxy;
 
 import com.example.demo01.entity.UserEntity;
-import com.google.gson.Gson;
+
 import java.io.IOException;
 import java.util.List;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -17,24 +13,24 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.*;
 
 /**
- * @Description
+ * @Description de
  * @Date 2022/9/23
  * @Author lifengsheng
  */
-public class RetrfitTest {
+public class RetrofitProxy {
+    public static final String API_URL = "http://localhost:8081/";
 
     public static void main(String[] args) {
         try {
-            retrfitTest();
+            retrfitTest3();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-    public static final String API_URL = "http://localhost:8081/";
-    private static void retrfitTest() throws IOException {
 
+    private static void retrfitTest() throws IOException {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://localhost:8081/")
+                .baseUrl(API_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -69,11 +65,45 @@ public class RetrfitTest {
         // 发送网络请求（同步）
         //Response<UserEntity> response = call.execute();
         //System.out.println(response.body());
+    }
 
+    private static void retrfitTest2() throws IOException {
+
+        UserEntity user = new UserEntity();
+        user.setUsername("xiao-wang");
+        user.setAge(102);
+        user.setPassword("qwerasd123");
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(API_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        // 创建User API接口的一个实例。
+        UserApi userApi = retrofit.create(UserApi.class);
+        // 创建一个调用实例
+        Call<Boolean> call = userApi.addUser(user);
 
         //获取并打印结果
-        Response<UserEntity> response = call.execute();
-        System.out.println(response);
+        Response<Boolean> response = call.execute();
+        System.out.println(response.body());
+    }
+
+    private static void retrfitTest3() throws IOException {
+        String API_URL = "http://localhost:8082/";
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(API_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        // 创建User API接口的一个实例。
+        UserApi userApi = retrofit.create(UserApi.class);
+        // 创建一个调用实例
+        Call<List<UserEntity>> call = userApi.getUserList("list");
+
+        //获取并打印结果
+        Response<List<UserEntity>> response = call.execute();
         System.out.println(response.body());
     }
 
@@ -86,7 +116,7 @@ public class RetrfitTest {
         Call<UserEntity> getUserById(@Query("id") Long id);
 
         @POST("/user/addUser")
-        Call<Object> addUser(@Body UserEntity user);
+        Call<Boolean> addUser(@Body UserEntity user);
 
         @GET("/user/getHeaders")
         @Headers({"User-Agent:Retrofit-Sample-App",

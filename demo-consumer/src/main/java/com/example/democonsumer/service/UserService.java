@@ -188,4 +188,8 @@ public class UserService {
     public User getUserByInternalMethod(Integer id) {
         return cacheTest.getUserByInternalMethod(id);
     }
+
+    public void insertUser(UserEntity user) {
+        userRepository.save(user);
+    }
 }

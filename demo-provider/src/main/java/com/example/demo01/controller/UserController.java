@@ -27,8 +27,8 @@ public class UserController {
     }
 
     @GetMapping("/getUserById")
-    public UserEntity getUserById(Long userId) {
-        return userService.getUserById(userId);
+    public UserEntity getUserById(Long id) {
+        return userService.getUserById(id);
     }
 
     @PostMapping("/addUser")

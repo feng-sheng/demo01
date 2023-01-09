@@ -1,12 +1,16 @@
 package com.example.democonsumer.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.example.democonsumer.entity.User;
 import com.example.democonsumer.entity.UserEntity;
 import com.example.democonsumer.service.UserService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -19,7 +23,7 @@ public class UserController {
     @Resource
     private UserService userService;
 
-    @GetMapping("/list")
+    @GetMapping("/user/list")
     public List<UserEntity> list() {
         return userService.list();
     }
@@ -94,6 +98,14 @@ public class UserController {
     public boolean addUser() {
         userService.addUser();
         return true;
+    }
+
+    @PostMapping("/user/addUser")
+    public String addUser(@RequestBody UserEntity user) {
+        userService.insertUser(user);
+        HashMap<String, Boolean> resultMap = new HashMap<>();
+        resultMap.put("result", true);
+        return JSONObject.toJSONString(resultMap);
     }
 
     @GetMapping("/logUserById")
