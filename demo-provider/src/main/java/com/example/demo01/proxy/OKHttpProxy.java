@@ -14,10 +14,10 @@ import java.util.HashMap;
  */
 public class OKHttpProxy {
     public static void main(String[] args) throws IOException {
-        test1();
+        testAddUser();
     }
 
-    public static void test1() throws IOException {
+    public static void testAddUser() throws IOException {
         UserEntity user = new UserEntity();
         user.setUsername("xiao-li");
         user.setAge(102);
