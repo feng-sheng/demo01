@@ -7,7 +7,7 @@
     <parent>
         <groupId>com.example</groupId>
         <artifactId>demo01</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.0.1</version>
     </parent>
     <properties>
         <java.version>1.8</java.version>
@@ -111,6 +111,7 @@
     </dependencies>
 
     <build>
+        <finalName>demo-provider</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -127,7 +128,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
                 <configuration>
-                    <mainClass>com.example.demoprovider.DemoProviderApplication</mainClass>
+                    <mainClass>com.example.demo01.DemoProviderApplication</mainClass>
                 </configuration>
                 <executions>
                     <execution>
