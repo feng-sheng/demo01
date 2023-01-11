@@ -29,6 +29,7 @@ public class UserService {
     private UserTestService userTestService;
 
     public List<UserEntity> list() {
+        log.info("######################## come in list method.");
         return userTestService.getUserList();
     }
 

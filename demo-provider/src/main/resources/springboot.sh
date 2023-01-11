@@ -28,7 +28,7 @@ start(){
   if [ $? -eq "0" ]; then
     echo "${APP_NAME} is already running. pid=${pid} ."
   else
-    nohup java -jar ${APP_PATH}/${APP_NAME} > ${APP_PATH}/${LOG_FILE} &
+    nohup java -jar ${APP_PATH}/${APP_NAME} > ${APP_PATH}/${LOG_FILE} 2>&1 &
     # nohup java -jar ${APP_PATH}/${APP_NAME} --spring.config.location=${CONF_PATH} --spring.profiles.active=dev >${LOG_FILE} 2>&1 &
     echo "${APP_NAME} start success"
     # sleep 0.5
