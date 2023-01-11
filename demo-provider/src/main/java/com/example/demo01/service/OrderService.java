@@ -19,7 +19,7 @@ import javax.annotation.Resource;
 @Service
 public class OrderService {
     @Resource
-    private UserService userService;
+    private UserTestService userTestService;
 
     public void createOrder() {
         ApplicationContext context = ContextUtils.getApplicationContext();
@@ -41,7 +41,7 @@ public class OrderService {
         // 事物方法内发布事件
         context.publishEvent(new MessageEvent(context, "message", 1));
         UserEntity userEntity = new UserEntity(7L, username, password, age);
-        userService.addUser(userEntity);
+        userTestService.addUser(userEntity);
         throw new RuntimeException("runtimeException");
     }
 }

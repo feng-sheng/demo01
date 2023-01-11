@@ -22,13 +22,13 @@ public class RetrofitProxy {
 
     public static void main(String[] args) {
         try {
-            retrfitTest3();
+            retrofitTest3();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    private static void retrfitTest() throws IOException {
+    private static void retrofitTest() throws IOException {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(API_URL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -67,7 +67,7 @@ public class RetrofitProxy {
         //System.out.println(response.body());
     }
 
-    private static void retrfitTest2() throws IOException {
+    private static void retrofitTest2() throws IOException {
 
         UserEntity user = new UserEntity();
         user.setUsername("xiao-wang");
@@ -89,7 +89,7 @@ public class RetrofitProxy {
         System.out.println(response.body());
     }
 
-    private static void retrfitTest3() throws IOException {
+    private static void retrofitTest3() throws IOException {
         String API_URL = "http://localhost:8082/";
 
         Retrofit retrofit = new Retrofit.Builder()

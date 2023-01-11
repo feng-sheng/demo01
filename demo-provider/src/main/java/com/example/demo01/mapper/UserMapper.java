@@ -1,15 +1,12 @@
 package com.example.demo01.mapper;
 
-import com.example.demo01.entity.UserEntity;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.example.demo01.entity.User;
 
-import java.util.List;
-
-public interface UserMapper {
-    List<UserEntity> getUserList();
-
-    UserEntity getUserById(Long id);
-
-    int addUser(UserEntity user);
-
-    int updateUser(UserEntity user);
+/**
+ * @Author: lifengsheng
+ * @Date: 2023/1/11 15:19
+ * @Desc:
+ */
+public interface UserMapper extends BaseMapper<User> {
 }

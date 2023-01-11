@@ -104,7 +104,7 @@ public class UserController {
     @PostMapping("/user/addUser")
     public Map<String, Boolean> addUser(@RequestBody UserEntity user) {
         userService.insertUser(user);
-        HashMap<String, Boolean> resultMap = new HashMap<>();
+        Map<String, Boolean> resultMap = new HashMap<>();
         resultMap.put("result", true);
         return resultMap;
     }
