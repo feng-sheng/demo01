@@ -1,0 +1,10 @@
+${AnsiColor.BRIGHT_GREEN} _  ${AnsiColor.BRIGHT_CYAN} _    ${AnsiColor.BRIGHT_MAGENTA}      ${AnsiColor.BLACK}           _    _                 _
+${AnsiColor.BRIGHT_GREEN}| | ${AnsiColor.BRIGHT_CYAN}| |   ${AnsiColor.BRIGHT_MAGENTA}      ${AnsiColor.BLACK}          | |  (_)               | |
+${AnsiColor.BRIGHT_GREEN}| |_${AnsiColor.BRIGHT_CYAN}| |__ ${AnsiColor.BRIGHT_MAGENTA} _ __ ${AnsiColor.BLACK}___  ___  | | ___ _ __   __ _  __| | ___  _ __ ___  ___
+${AnsiColor.BRIGHT_GREEN}| __${AnsiColor.BRIGHT_CYAN}| '_ \${AnsiColor.BRIGHT_MAGENTA}| '__${AnsiColor.BLACK}/ _ \/ _ \ | |/ / | '_ \ / _` |/ _` |/ _ \| '_ ` _ \/ __|
+${AnsiColor.BRIGHT_GREEN}| |_${AnsiColor.BRIGHT_CYAN}| | | ${AnsiColor.BRIGHT_MAGENTA}| | ${AnsiColor.BLACK}|  __/  __/ |   <| | | | | (_| | (_| | (_) | | | | | \__ \
+${AnsiColor.BRIGHT_GREEN} \__${AnsiColor.BRIGHT_CYAN}|_| |_${AnsiColor.BRIGHT_MAGENTA}|_| ${AnsiColor.BLACK} \___|\___| |_|\_\_|_| |_|\__, |\__,_|\___/|_| |_| |_|___/
+                                         __/ |
+                                        |___/
+${AnsiColor.BRIGHT_MAGENTA}Three Kingdoms:: (v${application.version})
+${AnsiColor.BRIGHT_CYAN}Spring Boot::${spring-boot.formatted-version} ${AnsiColor.BLACK}

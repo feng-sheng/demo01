@@ -4,11 +4,13 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>demo-provider</artifactId>
     <name>demo-provider</name>
+
     <parent>
         <groupId>com.example</groupId>
-        <artifactId>demo01</artifactId>
+        <artifactId>three-kingdoms</artifactId>
         <version>0.0.1</version>
     </parent>
+
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -159,7 +161,27 @@
                     </execution>
                 </executions>
             </plugin>
+
+            <!-- 配置文件通过 @属性名@，获取pom.xml中的属性 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <delimiters>
+                        <delimiter>@</delimiter>
+                    </delimiters>
+                    <useDefaultDelimiters>false</useDefaultDelimiters>
+                </configuration>
+            </plugin>
         </plugins>
+        <!--指定resources插件处理哪个目录下的资源文件-->
+        <!--打开资源过滤功能-->
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
     </build>
 
 </project>
