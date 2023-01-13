@@ -15,4 +15,9 @@ public interface CommonConstants {
      * 逻辑删除标志：已删除
      */
     Integer DELETE = 1;
+
+    /**
+     * 临时账户ID
+     */
+    Long TEMP_USER_ID = 8888L;
 }

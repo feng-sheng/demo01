@@ -34,6 +34,13 @@ public class UserController {
         return userService.login(user);
     }
 
+    @ApiOperation("编辑用户")
+    @PostMapping("/updateUserInfo")
+    public boolean updateUserInfo(@RequestBody User user) {
+        userService.updateUserInfo(user);
+        return true;
+    }
+
     @ApiOperation("测试接口")
     @GetMapping("/list")
     public List<UserEntity> list() {

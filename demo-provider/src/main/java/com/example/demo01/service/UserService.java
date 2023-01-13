@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
@@ -49,6 +50,8 @@ public class UserService {
         }
 
         // 添加用户
+        user.setCreateUser(CommonConstants.TEMP_USER_ID);
+        user.setCreateTime(new Date());
         userRepository.save(user);
     }
 
@@ -64,5 +67,21 @@ public class UserService {
                 .eq(User::getDelFlag, CommonConstants.NOT_DELETE));
 
         return !Objects.isNull(user);
+    }
+
+    /**
+     * 编辑用户信息
+     *
+     * @param userInfo 账号密码
+     */
+    public void updateUserInfo(User userInfo) {
+        User user = userRepository.getById(userInfo.getId());
+        if (Objects.isNull(user)) {
+            throw new RuntimeException("用户不存在");
+        }
+
+        userInfo.setUpdateUser(CommonConstants.TEMP_USER_ID);
+        userInfo.setUpdateTime(new Date());
+        userRepository.updateById(userInfo);
     }
 }
