@@ -29,9 +29,9 @@ public class UserController {
     }
 
     @ApiOperation("登陆用户")
-    @PostMapping("/signIn")
+    @PostMapping("/login")
     public boolean signIn(@RequestBody User user) {
-        return userService.signIn(user);
+        return userService.login(user);
     }
 
     @ApiOperation("测试接口")

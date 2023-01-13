@@ -57,7 +57,7 @@ public class UserService {
      *
      * @param userInfo 账号密码
      */
-    public boolean signIn(User userInfo) {
+    public boolean login(User userInfo) {
         User user = userRepository.getOne(new LambdaQueryWrapper<User>()
                 .eq(User::getUsername, userInfo.getUsername())
                 .eq(User::getPassword, userInfo.getPassword())

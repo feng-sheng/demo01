@@ -1,10 +1,16 @@
-${AnsiColor.BRIGHT_GREEN} _  ${AnsiColor.BRIGHT_CYAN} _    ${AnsiColor.BRIGHT_MAGENTA}      ${AnsiColor.BLACK}           _    _                 _
-${AnsiColor.BRIGHT_GREEN}| | ${AnsiColor.BRIGHT_CYAN}| |   ${AnsiColor.BRIGHT_MAGENTA}      ${AnsiColor.BLACK}          | |  (_)               | |
-${AnsiColor.BRIGHT_GREEN}| |_${AnsiColor.BRIGHT_CYAN}| |__ ${AnsiColor.BRIGHT_MAGENTA} _ __ ${AnsiColor.BLACK}___  ___  | | ___ _ __   __ _  __| | ___  _ __ ___  ___
-${AnsiColor.BRIGHT_GREEN}| __${AnsiColor.BRIGHT_CYAN}| '_ \${AnsiColor.BRIGHT_MAGENTA}| '__${AnsiColor.BLACK}/ _ \/ _ \ | |/ / | '_ \ / _` |/ _` |/ _ \| '_ ` _ \/ __|
-${AnsiColor.BRIGHT_GREEN}| |_${AnsiColor.BRIGHT_CYAN}| | | ${AnsiColor.BRIGHT_MAGENTA}| | ${AnsiColor.BLACK}|  __/  __/ |   <| | | | | (_| | (_| | (_) | | | | | \__ \
-${AnsiColor.BRIGHT_GREEN} \__${AnsiColor.BRIGHT_CYAN}|_| |_${AnsiColor.BRIGHT_MAGENTA}|_| ${AnsiColor.BLACK} \___|\___| |_|\_\_|_| |_|\__, |\__,_|\___/|_| |_| |_|___/
-                                         __/ |
-                                        |___/
+${AnsiColor.BRIGHT_GREEN} _  ${AnsiColor.BRIGHT_CYAN} _    ${AnsiColor.BRIGHT_MAGENTA}      ${AnsiColor.YELLOW}    ${AnsiColor.BRIGHT_GREEN}      ${AnsiColor.BRIGHT_CYAN}  _    ${AnsiColor.BRIGHT_MAGENTA}_${AnsiColor.YELLOW}       ${AnsiColor.BRIGHT_GREEN}      ${AnsiColor.BRIGHT_CYAN}    _ ${AnsiColor.BRIGHT_MAGENTA}
+${AnsiColor.BRIGHT_GREEN}| | ${AnsiColor.BRIGHT_CYAN}| |   ${AnsiColor.BRIGHT_MAGENTA}      ${AnsiColor.YELLOW}    ${AnsiColor.BRIGHT_GREEN}      ${AnsiColor.BRIGHT_CYAN} | |  ${AnsiColor.BRIGHT_RED}(_)${AnsiColor.YELLOW}      ${AnsiColor.BRIGHT_GREEN}      ${AnsiColor.BRIGHT_CYAN}   | |${AnsiColor.BRIGHT_MAGENTA}
+${AnsiColor.BRIGHT_GREEN}| |_${AnsiColor.BRIGHT_CYAN}| |__ ${AnsiColor.BRIGHT_MAGENTA} _ __ ${AnsiColor.YELLOW}___ ${AnsiColor.BRIGHT_GREEN} ___  ${AnsiColor.BRIGHT_CYAN} | | __${AnsiColor.BRIGHT_MAGENTA}_ ${AnsiColor.YELLOW}_ __  ${AnsiColor.BRIGHT_GREEN} __ _ ${AnsiColor.BRIGHT_CYAN} __| |${AnsiColor.BRIGHT_MAGENTA} ___ ${AnsiColor.YELLOW} _ __ ___ ${AnsiColor.BRIGHT_GREEN} ___
+${AnsiColor.BRIGHT_GREEN}| __|${AnsiColor.BRIGHT_CYAN} '_ \${AnsiColor.BRIGHT_MAGENTA}| '__${AnsiColor.YELLOW}/ _ \${AnsiColor.BRIGHT_GREEN}/ _ \ ${AnsiColor.BRIGHT_CYAN} | |/ /${AnsiColor.BRIGHT_MAGENTA} |${AnsiColor.YELLOW} '_ \ ${AnsiColor.BRIGHT_GREEN}/ _` |${AnsiColor.BRIGHT_CYAN}/ _` |${AnsiColor.BRIGHT_MAGENTA}/ _ \${AnsiColor.YELLOW}| '_ ` _ \${AnsiColor.BRIGHT_GREEN}/ __|
+${AnsiColor.BRIGHT_GREEN}| |_${AnsiColor.BRIGHT_CYAN}| | | |${AnsiColor.BRIGHT_MAGENTA} | ${AnsiColor.YELLOW}|  __/${AnsiColor.BRIGHT_GREEN}  __/ ${AnsiColor.BRIGHT_CYAN} |   <${AnsiColor.BRIGHT_MAGENTA}| ${AnsiColor.YELLOW}| | | |${AnsiColor.BRIGHT_GREEN} (_| |${AnsiColor.BRIGHT_CYAN} (_| ${AnsiColor.BRIGHT_MAGENTA}| (_) |${AnsiColor.YELLOW} | | | | ${AnsiColor.BRIGHT_GREEN}\__ \
+${AnsiColor.BRIGHT_GREEN} \__|${AnsiColor.BRIGHT_CYAN}_| |_${AnsiColor.BRIGHT_MAGENTA}|_| ${AnsiColor.YELLOW} \___|${AnsiColor.BRIGHT_GREEN}\___| ${AnsiColor.BRIGHT_CYAN} |_|\_\${AnsiColor.BRIGHT_MAGENTA}_|${AnsiColor.YELLOW}_| |_|${AnsiColor.BRIGHT_GREEN}\__, |${AnsiColor.BRIGHT_CYAN}\__,_|${AnsiColor.BRIGHT_MAGENTA}\___/${AnsiColor.YELLOW}|_| |_| |_|${AnsiColor.BRIGHT_GREEN}___/
+                                        ${AnsiColor.BRIGHT_GREEN} __/ |
+                                        ${AnsiColor.BRIGHT_GREEN}|___/
 ${AnsiColor.BRIGHT_MAGENTA}Three Kingdoms:: (v${application.version})
 ${AnsiColor.BRIGHT_CYAN}Spring Boot::${spring-boot.formatted-version} ${AnsiColor.BLACK}
+
+${AnsiColor.YELLOW}Three Kingdoms未来将是一款非常流行的App，主要用于发现自身的兴趣爱好，帮助大家更好的社交
+目前由3个人共同完成开发，非常欢迎有志之士贡献代码💪 或者向我们捐款😍
+
+${AnsiColor.BLUE}联系邮箱：435421324@qq.com
+${AnsiColor.BLACK}

@@ -23,6 +23,9 @@ public class SwaggerConfig {
     @Value("${swagger.enable.switch:false}")
     private Boolean enableSwitch;
 
+    @Value("${application.version:}")
+    private String applicationVersion;
+
     // 配置docket以配置Swagger具体参数
     @Bean
     public Docket docket() {
@@ -40,7 +43,7 @@ public class SwaggerConfig {
         return new ApiInfo(
                 "三国演义API",
                 "About Three Kingdoms Story Swagger",
-                "v0.0.1",
+                applicationVersion,
                 "https://github.com/feng-sheng/demo01",
                 contact,
                 "Apache 2.0 许可",
